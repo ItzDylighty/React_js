@@ -1,0 +1,75 @@
+import React, { useState } from "react";
+
+function App() {
+  const [roomType, setRoomType] = useState("Single");
+  const [days, setDays] = useState(1);
+  const [rooms, setRooms] = useState(1);
+  const [totalAmount, setTotalAmount] = useState(0);
+  
+  const roomRates = {
+    Single: 1500,
+    Deluxe: 2500,
+    Family: 3000,
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const ratePerDay = roomRates[roomType];
+    const total = ratePerDay * days * rooms;
+    setTotalAmount(total);
+  };
+
+  return (
+    <div style={{ width: "300px", margin: "auto", paddingTop: "50px" }}>
+      <h2>Room Booking</h2>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Room Type:
+          <select value={roomType} onChange={(e) => setRoomType(e.target.value)}>
+            <option value="Single">Single</option>
+            <option value="Deluxe">Deluxe</option>
+            <option value="Family">Family</option>
+          </select>
+        </label>
+        <br /><br />
+        
+        <label>
+          Number of Days:
+          <input 
+            type="number" 
+            value={days} 
+            onChange={(e) => setDays(Math.max(1, e.target.value))} 
+            min="1"
+          />
+        </label>
+        <br /><br />
+
+        <label>
+          Number of Rooms:
+          <input 
+            type="number" 
+            value={rooms} 
+            onChange={(e) => setRooms(Math.max(1, e.target.value))} 
+            min="1"
+          />
+        </label>
+        <br /><br />
+
+        <button type="submit">Submit</button>
+      </form>
+
+      {totalAmount > 0 && (
+        <div style={{ marginTop: "20px" }}>
+          <h3>Booking Details</h3>
+          <p>Room Type: {roomType}</p>
+          <p>Room Rate Per Day: {roomRates[roomType]}</p>
+          <p>Total Days: {days}</p>
+          <p>Total Rooms: {rooms}</p>
+          <p><strong>Total Amount Due: {totalAmount}</strong></p>
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default App;
