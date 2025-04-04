@@ -1,3 +1,5 @@
+/*npm install axios */
+
 1. Fetching data using the get method
 
 const fetchProducts = async () => {
