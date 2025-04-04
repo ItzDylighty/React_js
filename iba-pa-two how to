@@ -33,7 +33,7 @@ function Home() {
 }
 export default Home;
 
-About.js content
+"About.js" 
 
 function About() {
     return <h1>This is the about page</h1>;
