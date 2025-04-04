@@ -1,0 +1,83 @@
+1.JSX Example
+
+function App() {
+  return (
+    <div className="App">
+      <h1>Hello World</h1>
+    </div>
+  );
+}
+export default App;
+
+2.Expressions in JSX
+
+function App() {
+  return (
+    <div className="App">
+      <p>The sum is { 5 + 10 }</p>
+    </div>
+  );
+}
+export default App;
+
+3.Elements Must be Closed
+
+function App() {
+  return (
+    <div className="App">
+      <input type="text" />
+    </div>
+  );
+}
+export default App;
+
+4. Return a single root element
+
+<>
+ <h1>JSX Example</h1>
+ <h2>This is a subtitle</h2>
+</>
+
+5. Displaying Variables in JSX
+
+function App() {
+  const str = "Hello World!";
+  return (
+    <div className="App">
+      <p>{ str }</p>
+    </div>
+  );
+}
+export default App;
+
+6. JSX Attribute class
+
+function App() {
+  return (
+    <div className="App">
+      <h1 className="my-class">Hello World</h1>
+    </div>
+  );
+}
+export default App;
+
+/*Only One*/
+7. Components in Files
+
+ function Car() {
+   return <h2>Hi, I am a Car!</h2>;
+ }
+ export default Car;
+
+8. Using components in file
+
+import Car from './Car’;
+ function App() {
+   return (
+     <div>
+       <Car />
+     </div>
+   );
+ }
+ export default App;
+
