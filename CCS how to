@@ -1,0 +1,41 @@
+1. Inline Styling
+function App() {
+  return (
+    <h1 style={{color: "red"}}>Hello Style!</h1>
+  );
+}
+export default App;
+
+2. JavaScript Object
+
+function App() {
+  const myStyle = {
+    color: "white",
+    backgroundColor: "DodgerBlue",
+    padding: "10px",
+    fontFamily: "Sans-Serif"
+  };
+  return (
+    <h1 style={ myStyle }>Hello Style!</h1>
+  );
+}
+export default App;
+
+3. CSS Stylesheet (Create a new file called "App.css")
+body {
+   background-color: #282c34;
+   color: white;
+   padding: 40px;
+   font-family: Sans-Serif;
+   text-align: center;
+}
+
+Import the stylesheet in your application:
+
+import './App.css';
+function App() {
+  return (
+    <h1>Hello Style!</h1>
+  );
+}
+export default App;
