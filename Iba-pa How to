@@ -1,0 +1,98 @@
+1.Props
+function Car(props) {
+   return <h2>I am a { props.brand }!</h2>;
+ }
+
+Props Example
+function App() {
+  return (
+    <div>
+      <Car brand="Ford" />
+    </div>
+  );
+}
+
+function Car(props) {
+  return <h2>I am a { props.brand }!</h2>;
+}
+
+export default App;
+
+2. Adding Events Example
+
+function App() {
+  const shoot = () => {
+    alert("Great Shot!");
+  }
+  return (
+    <button onClick={shoot}>Take the shot!</button>
+  );
+}
+export default App;
+
+3.Passing Arguments
+
+function App() {
+   const shoot = (a) => {
+     alert(a);
+   }
+   return (
+     <button onClick={() => shoot("Goal!")}>Take the  shot!</button>
+  );
+ }
+ export default App
+
+4.React Event Object Example
+
+function App() {
+  const shoot = (a, b) => {
+    alert(b.type);
+  }
+  return (
+    <button onClick={(event) => shoot("Goal!", event)}>Take the shot!</button>
+  );
+}
+export default App;
+
+5.React Conditional Rendering
+
+function App() {
+  const isLoaded = false;
+
+  if(isLoaded) 
+    return (<h1>Hello World!</h1>)
+  else
+    return (<div>Loading...</div>)
+}
+export default App;
+
+6.React Lists
+
+function App() {
+  const cars = ['Ford', 'BMW', 'Audi'];
+  return (
+    <div>
+      <h1>Who lives in my garage?</h1>
+      <ul>
+        {cars.map((car) => <li> { car } </li>)}
+      </ul>
+    </div>
+  );
+}
+export default App;
+
+7. Keys
+
+function App() {
+  const cars = [ {id: 1, brand: 'Ford’}, {id: 2, brand: 'BMW’} ];
+  return (
+    <div>
+      <h1>Who lives in my garage?</h1>
+      <ul> {cars.map((car) => <Car key={car.id} brand={car.brand} />)} </ul>
+    </div>
+  );
+}
+function Car(props) {
+  return <li>I am a { props.brand }</li>;
+}
+export default App;
