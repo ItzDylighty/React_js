@@ -161,7 +161,11 @@ function Timer() {
       setCount((count) => count + 1);
     }, 1000);
   }, []);
-  return <h1>I've rendered {count} times!</h1>;
+  return (
+  <>
+  <h1>I've rendered {count} times!</h1>;
+  </>
+  );
 }
 
 useEffect dependent on variable Example
