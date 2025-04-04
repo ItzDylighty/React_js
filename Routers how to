@@ -65,7 +65,7 @@ function App() {
 export default App;
 
 3.Handling Forms
-
+/*Single State*/
 import React, { useState } from "react";
 function App() {
   const [name, setName] = useState('');
@@ -80,6 +80,7 @@ function App() {
 
 export default App;
 
+/*DropDown*/
 import React, { useState } from "react";
 function App() {
   const [myCar, setMyCar] = useState("Volvo");
@@ -98,6 +99,7 @@ function App() {
 export default App;
 
 4. React Hooks
+
 import React, { useState } from "react";
 function App() {
   const [color, setColor] = useState("red");
