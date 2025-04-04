@@ -1,0 +1,55 @@
+1. Fetching data using the get method
+
+const fetchProducts = async () => {
+try {
+    const response = await axios.get(API_URL);
+    // handle data after fetching…
+    // setProducts(response.data.products);
+}
+catch(err)
+{
+    alert('An error occurred') }
+};
+
+2. Using post method
+
+const createProduct = async () => {
+    try {
+        const payload = {
+            name: name,
+            category: category,
+            quantity: quantity,
+        };
+        const response = await axios.post(API_URL, payload);
+        // handle response here
+    } catch (error) {
+        console.error('Error:', error);
+    }
+};
+
+3. Updating record using put method
+
+const updateProduct = async () => {
+    try {
+        const payload = {
+            name: name,
+            category: category,
+            quantity: quantity,
+        };
+        const response = await axios.put(`${API_URL}/${id}`, payload);
+        // handle response here
+    } catch (error) {
+        console.error('Error:', error);
+    }
+};
+
+4. Deleting record using delete method
+
+const deleteProduct = async (id) => {
+    try {
+        const response = await axios.delete(`${API_URL}/${id}`);
+        // handle response here
+    } catch (error) {
+        console.error('Error:', error);
+    }
+};
