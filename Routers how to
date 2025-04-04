@@ -68,6 +68,20 @@ export default App;
 
 import React, { useState } from "react";
 function App() {
+  const [name, setName] = useState('');
+  return (
+    <form>
+      <label>Name:</label>
+      <input tye="text" value= {name} onChnage={ (e) => setName(e.target.value) }>
+      <p>Hello { myCar }</p>
+    </form>
+  )
+}
+
+export default App;
+
+import React, { useState } from "react";
+function App() {
   const [myCar, setMyCar] = useState("Volvo");
   return (
     <form>
