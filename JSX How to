@@ -1,3 +1,14 @@
+How to React.js
+npm create vite@latest pangalan_ng_project
+>react
+>javaScript
+
+cd pangalan_ng_project
+npm install (download dependencies)
+npm run dev
+
+
+
 1.JSX Example
 
 function App() {
