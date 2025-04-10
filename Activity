@@ -1,0 +1,64 @@
+import { useState } from 'react';
+
+function App() {
+  const [roomType, setRoomType] = useState("Single");
+  const [days, setDays] = useState(0);
+  const [rooms, setRooms] = useState(0);
+  const [totalAmount, setTotalAmount] = useState(0);
+
+  const roomRates = {
+    Single: 1500,
+    Deluxe: 2500,
+    Family: 3000,
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const ratePerDay = roomRates[roomType];
+    const total = ratePerDay * days * rooms;
+    setTotalAmount(total);
+  };
+
+  return (
+    <>
+      <h2>Hotel Room Booking</h2>
+      <form onSubmit={handleSubmit}>
+        <label> Room Type: </label>
+        <select value={roomType} onChange={(e) => setRoomType(e.target.value)}>
+          <option value="Single">Single</option>
+          <option value="Deluxe">Deluxe</option>
+          <option value="Family">Family</option>
+        </select>
+        <br />
+
+        <label> Number of Days: </label>
+        <input
+          type="number"
+          value={days}
+          onChange={(e) => setDays(Number(e.target.value))}
+        />
+        <br />
+
+        <label> Number of Rooms: </label>
+        <input
+          type="number"
+          value={rooms}
+          onChange={(e) => setRooms(Number(e.target.value))}
+        />
+        <br /><br />
+
+        <button type="submit">Submit</button>
+      </form>
+      <>
+        <h3>Booking Details</h3>
+        <p>Room Type: {roomType}</p>
+        <p>Room Rate Per Day: {roomRates[roomType]}</p>
+        <p>Total Days: {days}</p>
+        <p>Total Rooms: {rooms}</p>
+        <p>Total Amount Due: {totalAmount}</p>
+      </>
+    </>
+  );
+}
+
+export default App;
