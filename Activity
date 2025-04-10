@@ -29,23 +29,15 @@ function App() {
           <option value="Deluxe">Deluxe</option>
           <option value="Family">Family</option>
         </select>
-        <br />
+        <br/>
 
         <label> Number of Days: </label>
-        <input
-          type="number"
-          value={days}
-          onChange={(e) => setDays(Number(e.target.value))}
-        />
-        <br />
+        <input type="number" value={days} onChange={(e) => setDays(Number(e.target.value))} />
+        <br/>
 
         <label> Number of Rooms: </label>
-        <input
-          type="number"
-          value={rooms}
-          onChange={(e) => setRooms(Number(e.target.value))}
-        />
-        <br /><br />
+        <input type="number" value={rooms} onChange={(e) => setRooms(Number(e.target.value))} />
+        <br/><br/>
 
         <button type="submit">Submit</button>
       </form>
