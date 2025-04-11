@@ -66,6 +66,18 @@ function App() {
 }
 export default App;
 
+Elif:
+function App({ userType }) {
+  if (userType === 'admin') {
+    return <h1>Welcome, Admin!</h1>;
+  } else if (userType === 'member') {
+    return <h1>Welcome, Member!</h1>;
+  } else {
+    return <h1>Welcome, Guest!</h1>;
+  }
+}
+export default App;
+
 6.React Lists
 
 function App() {
